@@ -7,7 +7,8 @@
                 {{ comment.user.name }}
             </h6>
             <small>
-                {{ comment.body }}
+                {{ comment.body }} 
+                {{ comment.body }} 
             </small>
         
             <div class="d-flex">

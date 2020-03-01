@@ -1,3 +1,10 @@
+body{
+    font-family: 'Atma' ;
+}
+a{
+    text-decoration: none;
+}
+
 .min-height{
 	min-height:80vh;
     display: flex;
