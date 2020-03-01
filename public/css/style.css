@@ -1,0 +1,40 @@
+.min-height{
+	min-height:80vh;
+    display: flex;
+    justify-content: center;
+}
+.welcome-text{
+	font-size: 3.575rem;
+    text-align: center;
+    color: #fff;
+    align-self: flex-end;
+    margin-bottom: 80px;
+}
+.welcome-text a{
+	text-decoration: none;
+	color: #fff;
+}
+
+.welcome-text1{
+	font-size: 3.575rem;
+    text-align: center;
+    color: #fff;
+     align-self: flex-end;
+    margin-bottom: 80px;
+}
+.welcome-text1 a{
+	text-decoration: none;
+	color: #fff;
+}
+.black{
+    color: black;
+}
+.content{
+    font-size: 20px;
+     margin-top: 10px; 
+    text-align: left;
+    padding: 12px;
+}
+.font-size115{
+    font-size: 15px!important;
+}

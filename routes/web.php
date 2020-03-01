@@ -19,9 +19,23 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/page1', function () {
+    return view('page1');
+});
+
+Route::get('/page2', function () {
+    return view('page2');
+});
+
+Route::get('/page3', function () {
+    return view('page3');
+});
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/video/{channel}', 'HomeController@show');
 Route::resource('channels', 'ChannelController');
 
 Route::get('videos/{video}', [VideoController::class, 'show'])->name('videos.show');

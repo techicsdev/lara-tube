@@ -13,8 +13,8 @@ class VideoController extends Controller
         if (request()->wantsJson()) {
             return $video;
         }
-
-        return view('video', compact('video'));
+        $videos=Video::all()->random(3);
+        return view('video', compact('video'))->with('videos',$videos);
     }
 
     public function updateViews(Video $video)

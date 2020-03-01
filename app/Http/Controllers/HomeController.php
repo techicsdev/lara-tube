@@ -5,7 +5,6 @@ namespace Laratube\Http\Controllers;
 use Laratube\Video;
 use Laratube\Channel;
 use Illuminate\Http\Request;
-
 class HomeController extends Controller
 {
     /**
@@ -15,9 +14,16 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        
     }
 
+
+    public function show(Channel $channel)
+    {
+        $videos = $channel->videos()->paginate(5);
+
+        return view('channels.arcive', compact('channel', 'videos'));
+    }
     /**
      * Show the application dashboard.
      *

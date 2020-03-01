@@ -1,78 +1,64 @@
-@extends('layouts.app')
+@extends('layouts.app1')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                @if($video->editable())
-                    <form action="{{ route('videos.update', $video->id) }}" method="POST">
-                    @csrf
-                    @method('PUT')
-                @endif
-
-                    <div class="card-header">{{ $video->title }}</div>
-
-                    <div class="card-body">
-                        <video-js id="video" class="vjs-default-skin" controls preload="auto" width="640" height="268">
-                            <source src='{{ asset(Storage::url("videos/{$video->id}/{$video->id}.m3u8")) }}' type="application/x-mpegURL">
-                        </video-js>
-
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div>
-                                <h4 class="mt-3">
-                                    @if($video->editable())
-                                        <input type="text" class="form-control" value="{{ $video->title }}" name="title">
-                                    @else
-                                        {{ $video->title }}
-                                    @endif
-                                </h4>
-                                {{ $video->views }} {{ str_plural('view', $video->views) }}
-                            </div>
-
-                            <votes :default_votes='{{ $video->votes }}' entity_id="{{ $video->id }}" entity_owner="{{ $video->channel->user_id }}"> </votes>
-                        </div>
-
-                        <hr>
-
-                        <div>
-                            @if($video->editable())
-                                <textarea name="description" cols="3" rows="3" class="form-control">{{ $video->description }}</textarea>
-
-                                <div class="text-right mt-4">
-                                        <button class="btn btn-info btn-sm" type="submit">Update video details</button>
-                                </div>
-                            @else
-                                {{ $video->description }}
-                            @endif
-                        </div>
-
-                        <hr>
-
-                        <div class="d-flex justify-content-between align-items-center mt-5">
-                            <div class="media">
-                                <img class="rounded-circle" src="https://picsum.photos/id/42/200/200" width="50" height="50" class="mr-3" alt="...">
-                                <div class="media-body ml-2">
-                                    <h5 class="mt-0 mb-0">
-                                        {{ $video->channel->name }}
-                                    </h5>
-                                    <span class="small">Published on {{ $video->created_at->toFormattedDateString() }}</span>
-                                </div>
-                            </div>
-
-                            <subscribe-button :channel="{{ $video->channel }}" :initial-subscriptions="{{ $video->channel->subscriptions }}" />
-                        </div>
-                    </div>
-                @if($video->editable())
-                </form>
-                @endif
+@if($video->editable())
+    <form action="{{ route('videos.update', $video->id) }}" method="POST">
+    @csrf
+    @method('PUT')
+@endif
+<div style="background-image:url('/images/Page-4-bg.jpg'); background-size:100% 100%;">
+    <header class="text-right" style="height: 10vh;">
+        <img src="{{ asset('images/1-top mojib.png') }}" alt="" style="width: 164px">
+    </header>
+    <br><br>
+    <div class="min-height mb-3">
+        <span class="w-100">
+            <div class="content">
+                <h2 class="text-left" style="font-size: 10px">{{ $video->title }}</h2>
+                <div>
+                    <video-js id="video" class="vjs-default-skin" controls preload="auto" width="640" height="268">
+                        <source src='{{ asset(Storage::url("videos/{$video->id}/{$video->id}.m3u8")) }}' type="application/x-mpegURL">
+                    </video-js>
+                </div>
+                <br>
+                <div class="table-responsive">
+                    <table class="table">
+                        <tbody>
+                            @foreach($videos as $video)
+                                <tr>
+                                    <td>
+                                        <img width="40px" height="40px" src="{{ asset($video->thumbnail) }}" alt="">
+                                    </td>
+                                    <td style="font-size: 10px;">
+                                        {{ substr($video->title, 0,25) }}
+                                    </td>
+                                  {{--   <td>
+                                        {{ $video->views }}
+                                    </td> --}}
+                                   {{--  <td>
+                                        {{ $video->percentage === 100 ? 'Live' : 'Processing' }}
+                                    </td> --}}
+                                    <td>
+                                        @if($video->percentage === 100)
+                                            <a href="{{ route('videos.show', $video->id) }}" class="btn btn-sm btn-info">
+                                                View
+                                            </a>
+                                        @endif
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
             </div>
-
-            <comments :video="{{ $video }}"></comments>
-
-        </div>
+        </span>
     </div>
-</div>
+    <footer style="height: 10vh;">
+         <div class="d-flex">
+                   
+         </div>
+    </footer>
+    </div>  
 @endsection
 
 @section('styles')
