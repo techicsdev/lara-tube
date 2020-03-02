@@ -1,3 +1,8 @@
+.video-js .vjs-big-play-button{
+    top: 50% !important;;
+    left: 50% !important;;
+    transform: translate(-50%, -50%) !important;;
+}
 header>a img{
     max-height: 10vh !important;
     width: 130px!important;
@@ -15,11 +20,14 @@ a{
     font-family: 'Roboto';
     font-weight: 700;
 }
+.card{
+    border: none;
+}
 .box-shadow{
-    webkit-box-shadow: 2.736px 7.518px 20px 0px rgba(0, 0, 0, 0.14);
+   /* webkit-box-shadow: 2.736px 7.518px 20px 0px rgba(0, 0, 0, 0.14);
     -moz-box-shadow: 2.736px 7.518px 20px 0px rgba(0, 0, 0, 0.14);
     -o-box-shadow: 2.736px 7.518px 20px 0px rgba(0, 0, 0, 0.14);
-    box-shadow: 2.736px 7.518px 20px 0px rgba(0, 0, 0, 0.14);
+    box-shadow: 2.736px 7.518px 20px 0px rgba(0, 0, 0, 0.14);*/
 }
 .min-height{
 	min-height:80vh;

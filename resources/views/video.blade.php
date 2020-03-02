@@ -41,7 +41,7 @@
                                     <td>
                                         @if($video->percentage === 100)
                                             <a href="{{ route('videos.show', $video->id) }}" class="btn btn-sm btn-info">
-                                                View
+                                                Watch
                                             </a>
                                         @endif
                                     </td>
@@ -53,10 +53,12 @@
             </div>
         </span>
     </div>
-    <footer style="height: 10vh; background-image:url('/images/page-4-bg.jpg');height: 165px;background-size: cover;background-position: bottom left;">
-        <div class="d-flex">
-            
-        </div>
+    <footer style="height: 10vh; background-image:url('/images/page-4-bg.jpg');height: 165px;background-size: cover;background-position: bottom left;" class="d-flex justify-content-start align-items-end">
+            <div class="text-left pb-3 pl-2 w-50">
+                                <a href="{{ url('page3?mobile=1') }}">
+                                        <img src="{{ asset('images/pvs-btn.png') }}" alt="" style="width: 150px">
+                                </a>
+                        </div>
     </footer>
     </div>  
 @endsection

@@ -48,7 +48,7 @@
                                     <td>
                                         @if($video->percentage === 100)
                                             <a href="{{ route('videos.show', $video->id) }}" class="btn btn-sm btn-info">
-                                                View
+                                                Watch
                                             </a>
                                         @endif
                                     </td>
