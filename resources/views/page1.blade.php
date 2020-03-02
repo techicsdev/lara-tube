@@ -31,7 +31,7 @@
                </div>
            </div>
 
-        <footer style="height: 10vh; background-image:url('/images/Page-2-bg.jpg');height: 150px;background-image: url(/images/Page-4-bg.jpg);background-size: cover;background-position: bottom left;" class="d-flex justify-content-end align-items-end">
+        <footer style="height: 10vh; background-image:url('/images/Page-2-bg.jpg');height: 150px;background-size: cover;background-position: bottom left;" class="d-flex justify-content-end align-items-end">
             <div class="text-right pb-3 pr-2">
                 <a href="{{ url('page2') }}">
                     <img src="{{ asset('images/next-btn.png') }}" alt="" style="width: 150px">

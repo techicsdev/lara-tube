@@ -6,9 +6,9 @@
     @csrf
     @method('PUT')
 @endif
-<div style="background-image:url('/images/Page-4-bg.jpg'); background-size:100% 100%;">
+<div>
     <header class="text-right" style="height: 10vh;">
-       <a href="/"><img src="{{ asset('images/1-top mojib.png') }}" alt="" style="width: 150px"></a>
+       <a href="/"><img src="{{ asset('/images/1-top mojib.png') }}" alt="" style="width: 150px"></a>
     </header>
     <br><br>
     <div class="min-height mb-3">
@@ -53,7 +53,7 @@
             </div>
         </span>
     </div>
-    <footer style="height: 10vh; background-image:url('/images/Page-4-bg.jpg');height: 165px;background-image: url(/images/Page-4-bg.jpg);background-size: cover;background-position: bottom left;">
+    <footer style="height: 10vh; background-image:url('/images/Page-4-bg.jpg');height: 165px;background-size: cover;background-position: bottom left;">
         <div class="d-flex">
             
         </div>
