@@ -50,15 +50,10 @@
                         </div>
                     </div>
                 </div>
-                <footer style="height: 10vh; background-image:url('/images/page-4-bg.jpg');height: 150px;background-size: cover;background-position: bottom left;" class="d-flex justify-content-end align-items-end">
+                <footer style="height: 10vh; background-image:url('/images/page-4-bg.jpg');height: 150px;background-size: cover;background-position: bottom left;" class="d-flex justify-content-start align-items-end">
                         <div class="text-left pb-3 pl-2 w-50">
-                                <a href="{{ url('page1') }}">
+                                <a href="{{ url('page1?mobile=1') }}">
                                         <img src="{{ asset('images/pvs-btn.png') }}" alt="" style="width: 150px">
-                                </a>
-                        </div>
-                        <div class="text-right pb-3 pr-2 w-50">
-                                <a href="{{ url('page3') }}">
-                                        <img src="{{ asset('images/next-btn.png') }}" alt="" style="width: 150px">
                                 </a>
                         </div>
                 </footer>

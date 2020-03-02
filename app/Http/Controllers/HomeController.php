@@ -20,7 +20,7 @@ class HomeController extends Controller
 
     public function show(Channel $channel)
     {
-        $videos = $channel->videos()->paginate(5);
+        $videos = $channel->videos()->paginate(1);
 
         return view('channels.arcive', compact('channel', 'videos'));
     }
