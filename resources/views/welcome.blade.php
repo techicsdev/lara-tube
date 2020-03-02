@@ -6,7 +6,7 @@
     </header>
     <div class="min-height">
         <h3 class="welcome-text fadeInLeft animated">
-            <a href="{{ url('page1') }}">
+            <a href="{{ url('page1?mobile=1') }}">
                 <span>স্বাগতম</span>
                 <span>জন্মভূমিতে</span>
             </a>
