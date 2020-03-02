@@ -21,14 +21,14 @@
                 </div>
               
                 <div class="card-body">
-
+                <div class="table-responsive">
                     <table class="table">
                         <thead>
                             <th>Image</th>
                             <th>Title</th>
                             <th>Views</th>
                             <th>Status</th>
-                            <th></th>
+                            <th>Active</th>
                         </thead>
                         <tbody>
                             @foreach($videos as $video)
@@ -52,15 +52,19 @@
                                             </a>
                                         @endif
                                     </td>
+                                    <td>
+                                        <a class="btn btn-success" href="{{ url('edit/'.$video->id) }}">Edit</a>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>
                     </table>
-
+                </div>
                     <div class="row justify-content-center">
                         {{ $videos->links() }}
                     </div>
                 </div>
+
             </div>
         </div>
     </div>

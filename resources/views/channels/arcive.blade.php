@@ -21,7 +21,7 @@
                                                         <td>
                                                             <img width="50px" height="40px" src="{{ asset($video->thumbnail) }}" alt="">
                                                         </td>
-                                                        <td style="font-size: 10px;" class="text-left">
+                                                        <td style="font-size: 10px;" class="text-left font-roboto">
                                                             {{ substr($video->title, 0,25) }}
                                                         </td>
                                                       {{--   <td>

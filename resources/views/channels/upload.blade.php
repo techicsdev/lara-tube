@@ -3,7 +3,6 @@
 @section('content')
 <div class="container-fluid">
     <div class="row justify-content-center">
-        <p>sda</p>
         <channel-uploads :channel="{{ $channel }}" inline-template>
             <div class="col-md-8">
                 <div class="card p-3 d-flex justify-content-center align-items-center" v-if="!selected">

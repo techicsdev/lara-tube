@@ -25,9 +25,23 @@ class VideoController extends Controller
         return response()->json([]);
     }
 
+    public function edit(Video $video)
+    {
+        return view('edit')->with('video',$video);
+    }
+
     public function update(UpdateVideoRequest $request,  Video $video) {
-        $video->update($request->only(['title', 'description']));
+        $video->update($request->only(['title', 'description','thumbnail']));
 
         return redirect()->back();
+    }
+
+    public function updatevideo(Request $request,Video $video)
+    {
+        $video->update($request->only(['title']));
+        if($request->has('thumbnail')){
+            $request->thumbnail->storeAs('/public/thumbnails/', $video->id.'.png');
+        }
+        return redirect('/channels/'.$video->channel_id);
     }
 }

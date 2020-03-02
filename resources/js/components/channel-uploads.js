@@ -1,4 +1,5 @@
 Vue.component('channel-uploads', {
+    name:'channel-uploads',
     props: {
         channel: {
             type: Object,
