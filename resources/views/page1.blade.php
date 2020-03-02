@@ -8,12 +8,16 @@
             @if($birthbg->count())
                 <div class="row">
                     <div class="col">
-                        <div class="card content mt-3 text-center">
-                            <div class="one-time card">
+                        <div class="blockquote mt-3 text-center">
+
+                            <div class="content">
+                                <div class="one-time card">
                                 @foreach($birthbg as $birt)
                                     <div class="card-body text-justify"><span>{{ $birt->content }}</span></div>
                                 @endforeach
                             </div>
+                            </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -46,8 +50,9 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" integrity="sha256-4hqlsNP9KM6+2eA8VUT0kk4RsMRTeS7QGHIM+MZ5sLY=" crossorigin="anonymous" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js" integrity="sha256-zUQGihTEkA4nkrgfbbAM1f3pxvnWiznBND+TuJoUv3M=" crossorigin="anonymous"></script>
 <script>
-        $('.one-time').slick({
-    dots: true,
+$('.one-time').slick({
+    dots: false,
+    autoplay: true,
     infinite: true,
     speed: 300,
     slidesToShow: 1,

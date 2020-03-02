@@ -1,7 +1,24 @@
 .video-js .vjs-big-play-button{
-    top: 50% !important;;
-    left: 50% !important;;
-    transform: translate(-50%, -50%) !important;;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+}
+.blockquote{
+    position: relative;
+    overflow-y: visible!important;
+}
+
+.blockquote::before{
+   content: '';
+    background-image: url(/images/qutation.png);
+    position: absolute;
+    background-size: contain;
+    top: -38px;
+    width: 100px;
+    height: 100px;
+    z-index: 10;
+    left: 0;
+    background-repeat: no-repeat;
 }
 header>a img{
     max-height: 10vh !important;
