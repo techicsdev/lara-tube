@@ -4,6 +4,7 @@ use Laratube\Http\Controllers\VideoController;
 use Laratube\Http\Controllers\VoteController;
 use Laratube\Http\Controllers\CommentController;
 use Laratube\Birthbg;
+use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,19 +16,31 @@ use Laratube\Birthbg;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', function (Request $request) {
+	// if(!$request->mobile){
+ //    	abort(404);
+	// }
+	return view('welcome');
 });
 
-Route::get('/page1', function () {
+Route::get('/page1', function (Request $request) {
+	// if(!$request->mobile){
+ //    	abort(404);
+	// }
     return view('page1')->with('birthbg',Birthbg::where('type',1)->get());
 });
 
-Route::get('/page2', function () {
+Route::get('/page2', function (Request $request) {
+	// if(!$request->mobile){
+ //    	abort(404);
+	// }
     return view('page2')->with('birthbg',Birthbg::where('type',2)->get());
 });
 
-Route::get('/page3', function () {
+Route::get('/page3', function (Request $request) {
+	// if(!$request->mobile){
+ //    	abort(404);
+	// }
     return view('page3');
 });
 
