@@ -8,7 +8,7 @@
 @endif
 <div>
     <header class="text-right" style="height: 10vh;">
-       <a href="/"><img src="{{ asset('/images/1-top mojib.png') }}" alt="" style="width: 150px"></a>
+       <a href="?mobile=1"><img src="{{ asset('/images/1-top mojib.png') }}" alt="" style="width: 150px"></a>
     </header>
     <br><br>
     <div class="min-height mb-3">

@@ -2,7 +2,7 @@
 @section('content')
  <div>
     <header class="text-right" style="height: 10vh;">
-        <a href="/"><img src="{{ asset('images/1-top mojib.png') }}" alt="" style="width: 150px"></a>
+        <a href="?mobile=1"><img src="{{ asset('images/1-top mojib.png') }}" alt="" style="width: 150px"></a>
     </header>
 				<div class="d-flex justify-content-between flex-column" style="min-height: 90vh">
 					<div class="text-center container">

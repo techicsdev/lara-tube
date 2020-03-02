@@ -2,7 +2,7 @@
 @section('content')
  <div>
     <header class="text-right" style="height: 10vh;">
-        <a href="/"><img src="{{ asset('images/1-top mojib.png') }}" alt="" style="width: 150px;max-height: 10vh"></a>
+        <a href="?mobile=1"><img src="{{ asset('images/1-top mojib.png') }}" alt="" style="width: 150px;max-height: 10vh"></a>
     </header>
         <div class="text-center container">
             @if($birthbg->count())
