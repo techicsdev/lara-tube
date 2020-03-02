@@ -6,17 +6,19 @@
         </header>
       
         <div class="text-center container">
-            <div class="row">
-                <div class="col">
-                    <div class="card content mt-3 text-center">
-                        <div class="one-time card">
-                            @foreach($birthbg as $birt)
-                                <div class="card-body"><span>{{ $birt->content }}</span></div>
-                            @endforeach
+            @if($birthbg->count())
+                <div class="row">
+                    <div class="col">
+                        <div class="card content mt-3 text-center">
+                            <div class="one-time card">
+                                @foreach($birthbg as $birt)
+                                    <div class="card-body"><span>{{ $birt->content }}</span></div>
+                                @endforeach
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            @endif
             <div class="row mt-2">
                <div class="col-md-12">
                     <div class="card box-shadow">

@@ -6,6 +6,7 @@
 				</header>
 				<div class="d-flex justify-content-between flex-column" style="min-height: 90vh">
 					<div class="text-center container">
+					@if($birthbg->count())
 		            <div class="row">
 		                <div class="col">
 		                    <div class="card content mt-3 text-center">
@@ -17,6 +18,7 @@
 		                    </div>
 		                </div>
 		            </div>
+		           @endif
 	           </div>
 				<footer style="height: 10vh; background-image:url('/images/Page-2-bg.jpg');height: 150px;background-image: url(/images/Page-4-bg.jpg);background-size: cover;background-position: bottom left;" class="d-flex justify-content-end align-items-end">
 						<div class="text-left pb-3 pl-2 w-50">
