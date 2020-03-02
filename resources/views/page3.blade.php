@@ -1,40 +1,35 @@
 @extends('layouts.app1')
 @section('content')
-<div style="background-image:url('/images/Page-4-bg.jpg'); background-size:100% 100%;">
+<div>
 	<header class="text-right" style="height: 10vh;">
-		<img src="{{ asset('images/1-top mojib.png') }}" alt="" style="width: 150px">
+		<a href="/"><img src="{{ asset('images/1-top mojib.png') }}" alt="" style="width: 150px"></a>
 	</header>
 	<div class="min-height mb-3">
 		<span class="">
 			<div class="content mt-3">
 				<h2 class="text-left">আর্কাইভ</h2>
-				<div>
-					<a class="btn-link" href="{{ url('video/f77c9627-ea74-49f4-96e5-c36cf8002d4d') }}">
-						<img src="{{ asset('images/ar1.png') }}" alt="" style="width: 100%">
-						<h2 class="text-center py-2">মুক্তিযুদ্ধ</h2>
-					</a>
+				<div class="card box-shadow">
+					<img class="card-img-top" src="{{ asset('images/ar1.png') }}" alt="">
+					<div class="card-body">
+						<a class="btn btn-block btn-danger" href="{{ url('video/f77c9627-ea74-49f4-96e5-c36cf8002d4d') }}">
+							<h2 class="text-center m-0">মুক্তিযুদ্ধ</h2>
+						</a>
+					</div>
 				</div>
-				<div>
-					 <a class="btn-link" href="{{ url('video/f77c9627-ea74-49f4-96e5-c36cf8002d5d') }}">
-						<img src="{{ asset('images/ar.png') }}" alt="" style="width: 100%">
-						<h2 class="text-center py-2">বঙ্গবন্ধু</h2>
-					 </a>
+				<div class="card mt-2 box-shadow">
+					<img class="card-img-top" src="{{ asset('images/ar.png') }}" alt="" style="width: 100%">
+					<div class="card-body">
+						<a class="btn btn-block btn-danger" href="{{ url('video/f77c9627-ea74-49f4-96e5-c36cf8002d5d') }}">
+							<h2 class="text-center m-0">বঙ্গবন্ধু</h2>
+						</a>
+					</div>
 				 </div>
 			</div>
 		</span>
 	</div>
-	<footer style="height: 10vh;">
+	<footer style="height: 10vh; background-image:url('/images/Page-4-bg.jpg');height: 165px;background-image: url(/images/Page-4-bg.jpg);background-size: cover;background-position: bottom left;">
 		<div class="d-flex">
-			<div class="text-left pb-3 pl-2 w-50">
-				<a href="{{ url('page1') }}">
-					<img src="{{ asset('images/pvs-btn.png') }}" alt="" style="width: 150px">
-				</a>
-			</div>
-			<div class="text-right pb-3 pr-2 w-50">
-				<a href="{{ url('page3') }}">
-					<img src="{{ asset('images/next-btn.png') }}" alt="" style="width: 150px">
-				</a>
-			</div>
+			
 		</div>
 	</footer>
 </div>    

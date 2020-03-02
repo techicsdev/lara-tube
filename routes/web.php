@@ -3,7 +3,7 @@ use Laratube\Http\Controllers\UploadVideoController;
 use Laratube\Http\Controllers\VideoController;
 use Laratube\Http\Controllers\VoteController;
 use Laratube\Http\Controllers\CommentController;
-
+use Laratube\Birthbg;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,17 +20,23 @@ Route::get('/', function () {
 });
 
 Route::get('/page1', function () {
-    return view('page1');
+    return view('page1')->with('birthbg',Birthbg::where('type',1)->get());
 });
 
 Route::get('/page2', function () {
-    return view('page2');
+    return view('page2')->with('birthbg',Birthbg::where('type',2)->get());
 });
 
 Route::get('/page3', function () {
     return view('page3');
 });
 
+Route::get('content',"BirthbgController@index");
+Route::get('content1',"BirthbgController@content1");
+Route::get('content2',"BirthbgController@content2");
+Route::post('content1',"BirthbgController@content1store");
+Route::post('content2',"BirthbgController@content2store");
+Route::get('contentdelete/{birthbg}',"BirthbgController@contentdelete")->name('birthbg');
 
 Auth::routes();
 

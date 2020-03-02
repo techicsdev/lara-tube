@@ -61,6 +61,9 @@
                                          <a class="dropdown-item" href="{{ route('channels.show', 'f77c9627-ea74-49f4-96e5-c36cf8002d5d') }}">
                                             বঙ্গবন্ধু
                                         </a>
+                                        <a class="dropdown-item" href="{{ url('content') }}">
+                                            Content
+                                        </a>
                                     @endauth
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();

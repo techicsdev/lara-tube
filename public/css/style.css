@@ -4,7 +4,12 @@ body{
 a{
     text-decoration: none;
 }
-
+.box-shadow{
+    webkit-box-shadow: 2.736px 7.518px 20px 0px rgba(0, 0, 0, 0.14);
+    -moz-box-shadow: 2.736px 7.518px 20px 0px rgba(0, 0, 0, 0.14);
+    -o-box-shadow: 2.736px 7.518px 20px 0px rgba(0, 0, 0, 0.14);
+    box-shadow: 2.736px 7.518px 20px 0px rgba(0, 0, 0, 0.14);
+}
 .min-height{
 	min-height:80vh;
     display: flex;

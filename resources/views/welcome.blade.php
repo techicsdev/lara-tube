@@ -2,7 +2,7 @@
 @section('content')
 <div style="background-image:url('images/Page-1-bg.jpg'); background-size:cover; ">
     <header class="text-right" style="height: 10vh;">
-        <img src="{{ asset('images/1-top mojib.png') }}" alt="" style="width: 164px">
+        <a href="/"><img src="{{ asset('images/1-top mojib.png') }}" alt="" style="width: 150px"></a>
     </header>
     <div class="min-height">
         <h3 class="welcome-text fadeInLeft animated">

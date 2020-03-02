@@ -18,6 +18,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
     @yield('styles')
 </head>
 <body style="overflow-x: hidden;">
@@ -29,5 +30,6 @@
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/customer.js') }}"></script>
     @yield('scripts')
+    
 </body>
 </html>
