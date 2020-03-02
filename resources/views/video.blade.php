@@ -53,10 +53,10 @@
             </div>
         </span>
     </div>
-    <footer style="height: 10vh;">
-         <div class="d-flex">
-                   
-         </div>
+    <footer style="height: 10vh; background-image:url('/images/Page-4-bg.jpg');height: 165px;background-image: url(/images/Page-4-bg.jpg);background-size: cover;background-position: bottom left;">
+        <div class="d-flex">
+            
+        </div>
     </footer>
     </div>  
 @endsection

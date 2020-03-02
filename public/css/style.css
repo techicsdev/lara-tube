@@ -1,3 +1,7 @@
+header>a img{
+    max-height: 10vh !important;
+    width: 130px!important;
+}
 body{
     font-family: 'Atma' ;
 }

@@ -1,9 +1,9 @@
 @extends('layouts.app1')
 @section('content')
-<div>
-	<header class="text-right" style="height: 10vh;">
-		<a href="/"><img src="{{ asset('images/1-top mojib.png') }}" alt="" style="width: 150px"></a>
-	</header>
+ <div>
+    <header class="text-right" style="height: 10vh;">
+        <a href="/"><img src="{{ asset('images/1-top mojib.png') }}" alt="" style="width: 150px"></a>
+    </header>
 	<div class="min-height mb-3">
 		<span class="">
 			<div class="content mt-3">
