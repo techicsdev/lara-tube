@@ -20,7 +20,7 @@
 		            </div>
 		           @endif
 	           </div>
-				<footer style="height: 10vh; background-image:url('/images/Page-3-bg.jpg');height: 150px;background-size: cover;background-position: bottom left;" class="d-flex justify-content-end align-items-end">
+				<footer style="height: 10vh; background-image:url('/images/page-3-bg.jpg');height: 150px;background-size: cover;background-position: bottom left;" class="d-flex justify-content-end align-items-end">
 						<div class="text-left pb-3 pl-2 w-50">
 								<a href="{{ url('page1') }}">
 										<img src="{{ asset('images/pvs-btn.png') }}" alt="" style="width: 150px">

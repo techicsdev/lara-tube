@@ -1,6 +1,6 @@
 @extends('layouts.app1')
 @section('content')
-        <div style="background-image:url('/images/Page-4-bg.jpg'); background-size:100% 100%;">
+        <div style="background-image:url('/images/page-4-bg.jpg'); background-size:100% 100%;">
                 <header class="text-right" style="height: 10vh;">
                     <a href="/"><img src="{{ asset('images/1-top mojib.png') }}" alt="" style="width: 150px"></a>
                 </header>
