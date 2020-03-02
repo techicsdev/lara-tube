@@ -2,26 +2,26 @@
 @section('content')
  <div>
     <header class="text-right" style="height: 10vh;">
-        <a href="/"><img src="{{ asset('images/1-top mojib.png') }}" alt="" style="width: 150px"></a>
+        <a href="?mobile=1"><img src="{{ asset('images/1-top mojib.png') }}" alt="" style="width: 150px"></a>
     </header>
                 <div class="d-flex justify-content-between flex-column" style="min-height: 90vh">
                 <div class="text-center container">
+                    <h2 class="text-left mt-3"> @if($channel->id=='f77c9627-ea74-49f4-96e5-c36cf8002d4d') মুক্তিযুদ্ধ আর্কাইভ @else বঙ্গবন্ধু আর্কাইভ @endif </h2>
                     <div class="row">
                         <div class="col">
-                            <div class="card">
+                            <div class="card mt-2">
                                 <div class="card-body">
-                                    <h2 class="text-left mt-3">
-                                        @if($channel->id=='f77c9627-ea74-49f4-96e5-c36cf8002d4d') মুক্তিযুদ্ধ আর্কাইভ @else বঙ্গবন্ধু আর্কাইভ @endif
-                                    </h2>
+                                   
+                                   
                                     <div class="table-responsive">
                                         <table class="table table-sm">
                                             <tbody>
                                                 @foreach($videos as $video)
                                                     <tr>
                                                         <td>
-                                                            <img width="40px" height="40px" src="{{ asset($video->thumbnail) }}" alt="">
+                                                            <img width="50px" height="40px" src="{{ asset($video->thumbnail) }}" alt="">
                                                         </td>
-                                                        <td style="font-size: 10px;">
+                                                        <td style="font-size: 10px;" class="text-left">
                                                             {{ substr($video->title, 0,25) }}
                                                         </td>
                                                       {{--   <td>
@@ -66,7 +66,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" integrity="sha256-4hqlsNP9KM6+2eA8VUT0kk4RsMRTeS7QGHIM+MZ5sLY=" crossorigin="anonymous" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js" integrity="sha256-zUQGihTEkA4nkrgfbbAM1f3pxvnWiznBND+TuJoUv3M=" crossorigin="anonymous"></script>
 <script>
-        $('.one-time').slick({
+$('.one-time').slick({
     dots: true,
     infinite: true,
     speed: 300,

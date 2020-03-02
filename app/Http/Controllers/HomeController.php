@@ -20,7 +20,7 @@ class HomeController extends Controller
 
     public function show(Channel $channel)
     {
-        $videos = $channel->videos()->paginate(1);
+        $videos = $channel->videos()->paginate(10);
 
         return view('channels.arcive', compact('channel', 'videos'));
     }
@@ -41,7 +41,6 @@ class HomeController extends Controller
             $videos = Video::where('title', 'LIKE', "%{$query}%")->orWhere('description', 'LIKE', "%{$query}%")->paginate(5, ['*'], 'video_page');
             $channels = Channel::where('name', 'LIKE', "%{$query}%")->orWhere('description', 'LIKE', "%{$query}%")->paginate(5, ['*'], 'channel_page');
         }
-
 
         return view('home')->with([
             'videos' => $videos,

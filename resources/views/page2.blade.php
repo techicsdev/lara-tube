@@ -2,7 +2,7 @@
 @section('content')
  <div>
     <header class="text-right" style="height: 10vh;">
-        <a href="?mobile=1"><img src="{{ asset('images/1-top mojib.png') }}" alt="" style="width: 150px"></a>
+        <a href="/?mobile=1"><img src="{{ asset('images/1-top mojib.png') }}" alt="" style="width: 150px"></a>
     </header>
 				<div class="d-flex justify-content-between flex-column" style="min-height: 90vh">
 					<div class="text-center container">
@@ -12,7 +12,7 @@
 		                    <div class="card content mt-3 text-center">
 		                        <div class="one-time card">
 		                            @foreach($birthbg as $birt)
-		                                <div class="card-body"><span>{{ $birt->content }}</span></div>
+		                                <div class="card-body text-justify"><span>{{ $birt->content }}</span></div>
 		                            @endforeach
 		                        </div>
 		                    </div>

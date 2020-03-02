@@ -8,7 +8,7 @@
 @endif
 <div>
     <header class="text-right" style="height: 10vh;">
-       <a href="?mobile=1"><img src="{{ asset('/images/1-top mojib.png') }}" alt="" style="width: 150px"></a>
+       <a href="/?mobile=1"><img src="{{ asset('/images/1-top mojib.png') }}" alt="" style="width: 150px"></a>
     </header>
     <br><br>
     <div class="min-height mb-3">
@@ -27,9 +27,9 @@
                             @foreach($videos as $video)
                                 <tr>
                                     <td>
-                                        <img width="40px" height="40px" src="{{ asset($video->thumbnail) }}" alt="">
+                                        <img width="50px" height="40px" src="{{ asset($video->thumbnail) }}" alt="">
                                     </td>
-                                    <td style="font-size: 10px;">
+                                    <td style="font-size: 10px;" class="text-left">
                                         {{ substr($video->title, 0,25) }}
                                     </td>
                                   {{--   <td>

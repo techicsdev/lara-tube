@@ -3,6 +3,7 @@
 @section('content')
 <div class="container-fluid">
     <div class="row justify-content-center">
+        <p>sda</p>
         <channel-uploads :channel="{{ $channel }}" inline-template>
             <div class="col-md-8">
                 <div class="card p-3 d-flex justify-content-center align-items-center" v-if="!selected">
@@ -27,8 +28,10 @@
                                 </div>
                                 <img v-else :src="video.thumbnail" style="width: 100%;" alt="">
                             </div>
-        
                             <div class="col-md-4">
+                                <input type="text" v-model="title" class="form-control w-100" placeholder="Video Title">
+                            </div>
+                            <div class="col-md-8">
                                 <a v-if="video.percentage && video.percentage === 100" target="_blank" :href="`/videos/${video.id}`">
                                     @{{ video.title }}
                                 </a>

@@ -22,9 +22,7 @@
     <div id="app" style="overflow-x: hidden;">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                   Admin
-                </a>
+                <a href="/home"><img src="{{ asset('images/1-top mojib.png') }}" alt="" style="width: 100px;max-height: 10vh"></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -85,6 +83,25 @@
         <main class="py-4">
             @yield('content')
         </main>
+        <div class="footer-bottom" style="position: absolute;bottom: 0px;width: 100%;" class="text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="bottom-inner">
+                            <div class="row">
+                                <div class="col-12">
+                                    <!-- Copyright -->
+                                    <div class="copyright text-center"> 
+                                        <p>Designed and Developed by <a href="https://www.techics.com/" target="_blank">Tech ICS</a> ©2019.</p>
+                                    </div>
+                                    <!--/ End Copyright -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script>    
@@ -98,7 +115,7 @@
             }
         } 
     </script>
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js1/app.js') }}"></script>
     @yield('scripts')
 </body>
 </html>

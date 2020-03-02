@@ -27,7 +27,7 @@
             @yield('content')
         </main>
     </div>
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js1/app.js') }}"></script>
     <script src="{{ asset('js/customer.js') }}"></script>
     @yield('scripts')
     
