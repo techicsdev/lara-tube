@@ -40,9 +40,9 @@ class VideoController extends Controller
     {
         // $video->update($request->only(['title']));
         Storage::delete('public/thumbnails/' . $video->id.'.png');
-        // if($request->has('thumbnail')){
-        //     $this->upload_image('/storage/thumbnails',$request->thumbnail,$video->id.'.png');
-        // }
+        if($request->has('thumbnail')){
+            $this->upload_image('/storage/thumbnails',$request->thumbnail,$video->id.'.png');
+        }
         return redirect('/channels/'.$video->channel_id);
     }
 
