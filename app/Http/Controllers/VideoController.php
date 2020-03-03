@@ -38,11 +38,11 @@ class VideoController extends Controller
 
     public function updatevideo(Request $request,Video $video)
     {
-        $video->update($request->only(['title']));
+        // $video->update($request->only(['title']));
         Storage::delete('public/thumbnails/' . $video->id.'.png');
-        if($request->has('thumbnail')){
-            $this->upload_image('/storage/thumbnails',$request->thumbnail,$video->id.'.png');
-        }
+        // if($request->has('thumbnail')){
+        //     $this->upload_image('/storage/thumbnails',$request->thumbnail,$video->id.'.png');
+        // }
         return redirect('/channels/'.$video->channel_id);
     }
 
@@ -50,16 +50,13 @@ class VideoController extends Controller
         if ($file) {
             try {
                 if ($file->isValid()) {
-                    if ($file->move(public_path($uploadPath), $storeName)) {
-                        return $storeName;
-                    } else {
-                        return false;
-                    }
+                    $file->move(public_path($uploadPath), $storeName);
                 } else {
                     return false;
                 }
-            } catch (\Exception $e) { }
+            } catch (\Exception $e) { 
+                dd($e);
+            }
         }
-        return false;
     }
 }
