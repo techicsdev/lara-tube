@@ -42,7 +42,7 @@ class VideoController extends Controller
 
         if($request->has('thumbnail')){
             try{
-                $is = $request->thumbnail->storeAs('/public/thumbnails/', $video->id.'.png','local');
+                $is = $request->thumbnail->storeAs('/public/thumbnails', $video->id.'.png','local');
                 dd($is);
             }catch(\Exception $error){
                 dd($error);
