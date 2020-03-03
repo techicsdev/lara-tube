@@ -41,11 +41,12 @@ class VideoController extends Controller
         $video->update($request->only(['title']));
 
         if($request->has('thumbnail')){
-           try{
-            $request->thumbnail->storeAs('/public/thumbnails/', $video->id.'.png','local');
-         }catch(\Exception $error){
-            dd($error);
-         }
+            try{
+                $is = $request->thumbnail->storeAs('/public/thumbnails/', $video->id.'.png','local');
+                dd($is);
+            }catch(\Exception $error){
+                dd($error);
+            }
         }
         if ($request->file('thumbnail')->isValid()) {
             dd($request->has('thumbnail'));
