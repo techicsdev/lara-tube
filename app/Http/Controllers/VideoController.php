@@ -39,9 +39,15 @@ class VideoController extends Controller
     public function updatevideo(Request $request,Video $video)
     {
         $video->update($request->only(['title']));
+
         if($request->has('thumbnail')){
-            $request->thumbnail->storeAs('/public/thumbnails/', $video->id.'.png');
+           try{
+            $request->thumbnail->storeAs('/public/thumbnails/', $video->id.'.png','local');
+         }catch(\Exception $error){
+            dd($error);
+         }
         }
+    
         return redirect('/channels/'.$video->channel_id);
     }
 }
