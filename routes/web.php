@@ -15,11 +15,11 @@ use Illuminate\Http\Request;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+use Laratube\Http\Mobile_Detect;
 Route::get('/', function (Request $request) {
-	if(!$request->mobile){
-    	abort(404);
-	}
+	
+
+	dd((new Mobile_Detect())->isMobile());
 	return view('welcome');
 });
 
