@@ -115,7 +115,7 @@
             }
         } 
     </script>
-    <script src="{{ asset('js1/app.js') }}"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
     @yield('scripts')
 </body>
 </html>

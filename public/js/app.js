@@ -31920,14 +31920,93 @@ module.exports = g;
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
-Vue.config.ignoredElements = ['video-js']; // new Vue({
-// 	route,
-// 	...App
-// })
+Vue.config.ignoredElements = ['video-js'];
+Vue.component('channel-uploads', {
+  name: 'channel-uploads',
+  props: {
+    channel: {
+      type: Object,
+      required: true,
+      "default": function _default() {
+        return {};
+      }
+    }
+  },
+  data: function data() {
+    return {
+      selected: false,
+      videos: [],
+      progress: {},
+      uploads: [],
+      intervals: {},
+      title: ''
+    };
+  },
+  methods: {
+    upload: function upload() {
+      var _this = this;
 
+      this.selected = true;
+      this.videos = Array.from(this.$refs.videos.files);
+      var uploaders = this.videos.map(function (video) {
+        var self = _this;
+        var form = new FormData();
+        _this.progress[video.name] = 0;
+        form.append('video', video);
+        form.append('title', video.name); // form.append('title', self.name)
+
+        return axios.post("/channels/".concat(_this.channel.id, "/videos"), form, {
+          onUploadProgress: function onUploadProgress(event) {
+            console.log(event);
+            _this.progress[video.name] = Math.ceil(event.loaded / event.total * 100);
+            console.log(Math.ceil(event.loaded / event.total * 100));
+
+            _this.$forceUpdate();
+          }
+        }).then(function (_ref) {
+          var data = _ref.data;
+          console.log(data);
+          window.location.href = '/channels/' + data.channel_id;
+          _this.uploads = [].concat(_toConsumableArray(_this.uploads), [data]);
+        });
+      });
+      axios.all(uploaders).then(function () {
+        _this.videos = _this.uploads;
+
+        _this.videos.forEach(function (video) {
+          _this.intervals[video.id] = setInterval(function () {
+            axios.get("/videos/".concat(video.id)).then(function (_ref2) {
+              var data = _ref2.data;
+
+              if (data.percentage === 100) {
+                clearInterval(_this.intervals[video.id]);
+              }
+
+              _this.videos = _this.videos.map(function (v) {
+                if (v.id === data.id) {
+                  return data;
+                }
+
+                return v;
+              });
+            });
+          }, 3000);
+        });
+      });
+    }
+  }
+});
 var app = new Vue({
   el: '#app'
 });
@@ -31978,8 +32057,8 @@ if (token) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\youtubu-laravel\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! D:\youtubu-laravel\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! D:\lara-tube\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! D:\lara-tube\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

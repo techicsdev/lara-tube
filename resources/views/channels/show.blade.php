@@ -26,9 +26,9 @@
                         <thead>
                             <th>Image</th>
                             <th>Title</th>
-                            <th>Views</th>
                             <th>Status</th>
                             <th>Active</th>
+                            <th>Action</th>
                         </thead>
                         <tbody>
                             @foreach($videos as $video)
@@ -38,9 +38,6 @@
                                     </td>
                                     <td>
                                         {{ $video->title }}
-                                    </td>
-                                    <td>
-                                        {{ $video->views }}
                                     </td>
                                     <td>
                                         {{ $video->percentage === 100 ? 'Uploaded' : 'Uploding' }}
