@@ -14,7 +14,7 @@
 								<textarea class="form-control" type="text" name="content" required></textarea>
 							</div>
 							<div class="col-12">
-								<label for="">Posation</label>
+								<label for="">Position</label>
 								<input class="form-control" type="number" name="posation" required>
 							</div>
 							<div class="col-12 mt-3">

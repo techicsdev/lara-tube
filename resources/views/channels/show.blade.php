@@ -54,6 +54,7 @@
                                     </td>
                                     <td>
                                         <a class="btn btn-success" href="{{ url('edit/'.$video->id) }}">Edit</a>
+                                        <a class="btn btn-danger" href="{{ url('delete/'.$video->id) }}">Delete</a>
                                     </td>
                                 </tr>
                             @endforeach
