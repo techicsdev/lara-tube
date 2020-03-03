@@ -47,7 +47,9 @@ class VideoController extends Controller
             dd($error);
          }
         }
-    
+        if ($request->file('thumbnail')->isValid()) {
+            dd($request->has('thumbnail'));
+        }
         return redirect('/channels/'.$video->channel_id);
     }
 }
