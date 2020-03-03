@@ -1,7 +1,7 @@
 <?php
 
 namespace Laratube\Http\Controllers;
-
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use Laratube\Video;
 use Laratube\Http\Requests\Videos\UpdateVideoRequest;
@@ -39,18 +39,27 @@ class VideoController extends Controller
     public function updatevideo(Request $request,Video $video)
     {
         $video->update($request->only(['title']));
-
+        Storage::delete('public/thumbnails/' . $video->id.'.png');
         if($request->has('thumbnail')){
-            try{
-                $request->thumbnail->storeAs('/public/thumbnails', $video->id.'.png','local');
-                
-            }catch(\Exception $error){
-                dd($error);
-            }
-        }
-        if ($request->file('thumbnail')->isValid()) {
-            dd($request->has('thumbnail'));
+            $this->upload_image('/storage/thumbnails',$request->thumbnail,$video->id.'.png');
         }
         return redirect('/channels/'.$video->channel_id);
+    }
+
+    public function upload_image($uploadPath, $file, $storeName){
+        if ($file) {
+            try {
+                if ($file->isValid()) {
+                    if ($file->move(public_path($uploadPath), $storeName)) {
+                        return $storeName;
+                    } else {
+                        return false;
+                    }
+                } else {
+                    return false;
+                }
+            } catch (\Exception $e) { }
+        }
+        return false;
     }
 }
