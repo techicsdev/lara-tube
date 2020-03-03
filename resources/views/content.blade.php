@@ -16,7 +16,7 @@
                 <tr>
                     <th>SL.</th>
                     <th>Content</th>
-                    <th>Posation</th>
+                    <th>Posation </th>
                     <th>Action</th>
                 </tr>
                 @forelse($content1 as $key => $var)
